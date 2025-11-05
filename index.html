@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha De Inscrição</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <button id="button_preencher_ficha">Preencher Anamnese para Consulta Nutricional</button>
+    <dialog class="modal" id="modal1">
+        <div class="linha-top">
+            <div class="item">
+                <h1>DADOS PESSOAIS</h1>
+            </div>
+        </div>
+        
+        <form class="formularioDadosPessoais">
+            <div class="linha">                
+                <div class="item">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome"/>
+                </div>
+                <div class="item">
+                    <label for="dataDeNascimento">Data de Nascimento: </label>
+                    <input type="date" id="data"/>
+                </div>
+            </div>
+            <div class="linha">
+                <div class="item">
+                    <label for="job">Gênero</label>
+                    <select name="job" id="job">
+                        <option value="masculino">Masculino </option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outro">outro</option>
+                    </select>
+                 </div>   
+                <div class="item">
+                   <label for="endereco">Endereço: </label>
+                    <input type="" id="endereco"/> 
+                </div>
+            </div>
+            <div class="linha">
+                <div class="item">
+                    <label for="altura">Altura <small>(Em cm): </small></label>
+                    <input type="number" id="altura"/>   
+                </div>
+                <div class="item">
+                    <label for="peso">Peso : </label>
+                    <input type="number" id="peso"/>
+                </div>
+                
+            </div>
+            <div class="linha">
+                <div class="item">
+                    <label for="email">E-mail: </label>
+                    <input placeholder="example@hotmail.com" type="email" id="email"/>    
+                </div>
+                <div class="item">
+                    <label for="telefone">Telefone: </label>
+                    <input type="tel" id="telefone"/>   
+                </div>       
+            </div>
+        <div class="linha-bot">
+            <div class="item">
+                <button id="buttonCancelar">CANCELAR</button>
+                <button id="buttonContinuar" type="button">CONTINUAR</button>
+            </div>
+        </div>
+        </form>        
+    </dialog>
+    <dialog class="modal" id="modal2">
+        <div class="linha-top">
+            <div class="item">
+                <h1>SAÚDE GERAL</h1>
+            </div>
+        </div>
+        <form>
+        
+        <div class="linha">
+            <div class="item">
+                <label for="job">Fuma?</label>
+                    <select name="fuma" id="fuma">
+                        <option value="frequentemente">Frequentemente </option>
+                        <option value="moderadamente">Moderadamente</option>
+                        <option value="raramente">Raramente</option>
+                        <option value="nunca">Nunca</option>
+                    </select>
+            </div>
+            <div class="item">
+                <label for="bebe">Bebe?</label>
+                    <select name="bebe" id="bebe">
+                        <option value="frequentemente">Frequentemente </option>
+                        <option value="moderadamente">Moderadamente</option>
+                        <option value="raramente">Raramente</option>
+                        <option value="nunca">Nunca</option>
+                    </select>
+            </div>
+        </div>
+        <div class="linha">
+            <div class="item">
+                <label for="message">Cirurgias que já fez: </label>
+                <textarea name="message" id="cirurgias"></textarea>
+            </div>
+            <div class="item">
+                <label for="message">Medicamentos que utiliza: </label>
+                <textarea name="message" id="medicamentos"></textarea>
+            </div>
+        </div>
+        <div class="linha">
+            <div class="item">
+                <p>Hipertenso?</p>
+                <input type="radio" name="hipertenso" value="sim">
+                <label for="sim">Sim</label>
+                <input type="radio" name="hipertenso" value="nao">
+                <label for="sim">Não</label>
+            </div>
+            <div class="item">
+                <p>Diabético?</p>
+                <input type="radio" name="diabetico" value="sim">
+                <label for="sim">Sim</label>
+                <input type="radio" name="diabetico" value="nao">
+                <label for="sim">Não</label>
+            </div>
+        </div>
+        <div class="linha-bot" id="linha-bot2">
+            <div class="item">
+                <button id="buttonVoltar" type="button">VOLTAR</button>
+            </div>
+            <div class="item">
+                <button id="buttonCancelar2" type="button">CANCELAR</button>
+            </div>
+            <div class="item">
+                <button id="buttonCadastrar" type="button">CADASTRAR</button>
+            </div>
+        </div>         
+        </form>
+    </dialog>
+</body>
+</html>
