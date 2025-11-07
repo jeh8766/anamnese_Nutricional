@@ -17,6 +17,10 @@ const pesoInput = document.querySelector("#peso");
 const apenasLetras = /^[A-Za-zÀ-ÿ\s]+$/;
 const cirurgias = document.querySelector("#cirurgias");
 const medicamentos = document.querySelector("#medicamentos");
+const genero = document.querySelector("#genero");
+const fuma = document.querySelector("#fuma");
+const bebe = document.querySelector("#bebe");
+
 
 buttonPreencherFicha.onclick = function (){
     modal1.showModal();
@@ -52,6 +56,10 @@ buttonContinuar.onclick = function (){
         return;
     }
 
+    if(genero.value===""){
+        alert("Selecione o gênero.")
+        return;
+    }
 
     if(new Date(dataInput.value)>new Date() || dataInput.value===""){
         alert("Data de Nascimento inválida.")
@@ -71,7 +79,7 @@ buttonContinuar.onclick = function (){
 
     const telefoneValidado = telefoneInput.value.replace(/\D/g, "");
     if (telefoneValidado.length < 11) {
-        alert("por favor, insira um número válido (com ddd).");
+        alert("por favor, insira um número válido (com ddd) de acordo com o formato exemplificado.");
         telefoneInput.focus();
         return;
     }
@@ -93,12 +101,22 @@ formSaudeGeral.addEventListener("submit", (event) => {
     let hipertenso= document.querySelector("input[name='hipertenso']:checked");
     let diabetico= document.querySelector("input[name='diabetico']:checked")
 
-    if(cirurgias.value===""){
+    if(fuma.value===""){
+        alert("O campo 'Fuma?' deve estar selecionado com uma opção válida.")
+        return;
+    }
+
+    if(bebe.value===""){
+        alert("O campo 'Bebe?' deve estar selecionado com uma opção válida.")
+        return;
+    }
+
+    if(cirurgias.value.trim()===""){
         alert("O campo 'Já fez alguma cirurgia? Se sim, quais?' não pode estar vazio");
         return;
     }
 
-    if(medicamentos.value===""){
+    if(medicamentos.value.trim()===""){
         alert("O campo 'Utiliza algum medicamento? Se sim, quais?' não pode estar vazio");
         return;
     }

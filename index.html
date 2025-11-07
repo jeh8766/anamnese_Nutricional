@@ -20,7 +20,7 @@
             <div class="linha">                
                 <div class="item">
                     <label for="nome">Nome</label>
-                    <input type="text" id="nome" maxlength="100"/>
+                    <input placeholder="Ex: Maria da Silva" type="text" id="nome" maxlength="100"/>
                 </div>
                 <div class="item">
                     <label for="dataDeNascimento">Data de Nascimento: </label>
@@ -30,7 +30,8 @@
             <div class="linha">
                 <div class="item">
                     <label for="job">Gênero</label>
-                    <select name="job" id="job">
+                    <select name="job" id="genero">
+                        <option value="">Selecione</option>
                         <option value="masculino">Masculino </option>
                         <option value="feminino">Feminino</option>
                         <option value="outro">outro</option>
@@ -38,28 +39,28 @@
                  </div>   
                 <div class="item">
                    <label for="endereco">Endereço: </label>
-                    <input type="text" id="endereco" maxlength="150"/> 
+                    <input placeholder="Ex: Rua das Flores, 123 - Centro" type="text" id="endereco" maxlength="150"/> 
                 </div>
             </div>
             <div class="linha">
                 <div class="item">
                     <label for="altura">Altura <small>(Em cm): </small></label>
-                    <input type="number" id="altura"/>   
+                    <input placeholder="Ex: 165" type="number" id="altura"/>   
                 </div>
                 <div class="item">
                     <label for="peso">Peso : </label>
-                    <input type="number" id="peso"/>
+                    <input placeholder="Ex: 68.5" type="number" id="peso"/>
                 </div>
                 
             </div>
             <div class="linha">
                 <div class="item">
                     <label for="email">E-mail: </label>
-                    <input placeholder="example@hotmail.com" type="email" id="email" maxlength="60"/>    
+                    <input placeholder="Ex: maria.silva@gmail.com" type="email" id="email" maxlength="60"/>    
                 </div>
                 <div class="item">
                     <label for="telefone">Telefone: </label>
-                    <input type="tel" id="telefone" maxlength="11"/>   
+                    <input placeholder="Ex: 11 987654321" type="tel" id="telefone"  maxlength="12"/>   
                 </div>       
             </div>
         <div class="linha-bot" id="linha-bot1">
@@ -87,6 +88,7 @@
             <div class="item">
                 <label for="job">Fuma?</label>
                     <select name="fuma" id="fuma">
+                        <option value="">Selecione</option>
                         <option value="frequentemente">Frequentemente </option>
                         <option value="moderadamente">Moderadamente</option>
                         <option value="raramente">Raramente</option>
@@ -96,6 +98,7 @@
             <div class="item">
                 <label for="bebe">Bebe?</label>
                     <select name="bebe" id="bebe">
+                        <option value="">Selecione</option>
                         <option value="frequentemente">Frequentemente </option>
                         <option value="moderadamente">Moderadamente</option>
                         <option value="raramente">Raramente</option>
@@ -106,11 +109,11 @@
         <div class="linha" id="linhaDeTexts">
             <div class="item">
                 <label for="message">Já fez alguma cirurgia? Se sim, quais? </label>
-                <textarea name="message" id="cirurgias" maxlength="300"></textarea>
+                <textarea placeholder="Descreva, se houver. Com descrição e ano." name="message" id="cirurgias" maxlength="300"></textarea>
             </div>
             <div class="item">
                 <label for="message">Utiliza algum medicamento? Se sim, quais? </label>
-                <textarea name="message" id="medicamentos" maxlength="300"></textarea>
+                <textarea placeholder="Informe o nome do remédio e motivo." name="message" id="medicamentos" maxlength="300"></textarea>
             </div>
         </div>
         <div class="linha" id="linhaRadio">
