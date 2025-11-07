@@ -20,7 +20,7 @@
             <div class="linha">                
                 <div class="item">
                     <label for="nome">Nome</label>
-                    <input type="text" id="nome"/>
+                    <input type="text" id="nome" maxlength="100"/>
                 </div>
                 <div class="item">
                     <label for="dataDeNascimento">Data de Nascimento: </label>
@@ -38,7 +38,7 @@
                  </div>   
                 <div class="item">
                    <label for="endereco">Endereço: </label>
-                    <input type="text" id="endereco"/> 
+                    <input type="text" id="endereco" maxlength="150"/> 
                 </div>
             </div>
             <div class="linha">
@@ -55,11 +55,11 @@
             <div class="linha">
                 <div class="item">
                     <label for="email">E-mail: </label>
-                    <input placeholder="example@hotmail.com" type="email" id="email"/>    
+                    <input placeholder="example@hotmail.com" type="email" id="email" maxlength="60"/>    
                 </div>
                 <div class="item">
                     <label for="telefone">Telefone: </label>
-                    <input type="tel" id="telefone"/>   
+                    <input type="tel" id="telefone" maxlength="11"/>   
                 </div>       
             </div>
         <div class="linha-bot" id="linha-bot1">
@@ -103,30 +103,38 @@
                     </select>
             </div>
         </div>
-        <div class="linha">
+        <div class="linha" id="linhaDeTexts">
             <div class="item">
-                <label for="message">Cirurgias que já fez: </label>
-                <textarea name="message" id="cirurgias"></textarea>
+                <label for="message">Já fez alguma cirurgia? Se sim, quais? </label>
+                <textarea name="message" id="cirurgias" maxlength="300"></textarea>
             </div>
             <div class="item">
-                <label for="message">Medicamentos que utiliza: </label>
-                <textarea name="message" id="medicamentos"></textarea>
+                <label for="message">Utiliza algum medicamento? Se sim, quais? </label>
+                <textarea name="message" id="medicamentos" maxlength="300"></textarea>
             </div>
         </div>
-        <div class="linha">
+        <div class="linha" id="linhaRadio">
             <div class="item">
-                <p>Hipertenso?</p>
-                <input type="radio" name="hipertenso" value="sim">
-                <label for="sim">Sim</label>
-                <input type="radio" name="hipertenso" value="nao">
-                <label for="sim">Não</label>
+                <div><p>Hipertenso?</p></div>
+                <div>
+                    <input type="radio" name="hipertenso" value="sim">
+                    <label for="sim">Sim</label>
+                </div>
+                <div>
+                    <input type="radio" name="hipertenso" value="nao">
+                    <label for="sim">Não</label>
+                </div>
             </div>
             <div class="item">
-                <p>Diabético?</p>
-                <input type="radio" name="diabetico" value="sim">
-                <label for="sim">Sim</label>
-                <input type="radio" name="diabetico" value="nao">
-                <label for="sim">Não</label>
+                <div><p>Diabético?</p></div>
+                <div>
+                    <input type="radio" name="diabetico" value="sim">
+                    <label for="sim">Sim</label>
+                </div>
+                <div>
+                    <input type="radio" name="diabetico" value="nao">
+                    <label for="sim">Não</label>
+                </div>
             </div>
         </div>
         <div class="linha-bot" id="linha-bot2">
@@ -137,7 +145,7 @@
                 <button id="buttonCancelar2" type="button">CANCELAR</button>
             </div>
             <div class="item">
-                <button id="buttonCadastrar" type="button">CADASTRAR</button>
+                <button id="buttonCadastrar" type="submit">CADASTRAR</button>
             </div>
         </div>         
         </form>

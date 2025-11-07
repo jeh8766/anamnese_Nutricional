@@ -15,6 +15,8 @@ const enderecoInput = document.querySelector("#endereco");
 const telefoneInput = document.querySelector("#telefone");
 const pesoInput = document.querySelector("#peso");
 const apenasLetras = /^[A-Za-zÀ-ÿ\s]+$/;
+const cirurgias = document.querySelector("#cirurgias");
+const medicamentos = document.querySelector("#medicamentos");
 
 buttonPreencherFicha.onclick = function (){
     modal1.showModal();
@@ -33,7 +35,7 @@ buttonContinuar.onclick = function (){
     }
 
     if (!apenasLetras.test(nomeInput.value)) {
-        alert("Digite um nome válido, números não são permitidos");
+        alert("Digite um nome válido, números e caracteres especiais não são permitidos");
         return;
     }
 
@@ -50,7 +52,8 @@ buttonContinuar.onclick = function (){
         return;
     }
 
-    if(new Date(dataInput.value)>new Date()){
+
+    if(new Date(dataInput.value)>new Date() || dataInput.value===""){
         alert("Data de Nascimento inválida.")
         return;
     }
@@ -61,10 +64,10 @@ buttonContinuar.onclick = function (){
         return;
     }
     if (pesoInput.value.trim() === "" || pesoInput.value <= 0){
-            alert("por favor, insira um peso válido (em kg).");
-            pesoInput.focus();
-            return;
-        }
+        alert("por favor, insira um peso válido (em kg).");
+        pesoInput.focus();
+        return;
+    }
 
     const telefoneValidado = telefoneInput.value.replace(/\D/g, "");
     if (telefoneValidado.length < 11) {
@@ -85,23 +88,36 @@ buttonCancelar2.onclick = function (){
     modal2.close();
 }
 
-// form.addEventListener("submit", (Event) => {
-//     Event.preventDefault();
+formSaudeGeral.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let hipertenso= document.querySelector("input[name='hipertenso']:checked");
+    let diabetico= document.querySelector("input[name='diabetico']:checked")
 
-//     // if(nameInput.value===""){
-//     //     alert("Por favor, preencha o seu nome");
-//     //     return;
-//     // }
+    if(cirurgias.value===""){
+        alert("O campo 'Já fez alguma cirurgia? Se sim, quais?' não pode estar vazio");
+        return;
+    }
 
-//     // if(emailInput.value==="" ){
-//     //     alert("Por favor, preencha o seu email");
-//     //     return;
-//     // }
+    if(medicamentos.value===""){
+        alert("O campo 'Utiliza algum medicamento? Se sim, quais?' não pode estar vazio");
+        return;
+    }
 
-//     // if(!validatePassword(passwordInput.value, 8)){
-//     //     alert("A senha precisa ter no mínimo 8 dígitos.")
-//     //     return
-//     // }
-//     form.submit();
-// })
+    if(!hipertenso){
+        alert("O campo'Hipertenso?' deve ser selecionado com sim ou não.");
+        return;
+    }
 
+    if(!diabetico){
+        alert("O campo'Diabético?' deve ser selecionado com sim ou não.");
+        return;
+    }
+
+    
+    alert("Cadastro realizado com sucesso!");
+
+    modal1.close();
+    modal2.close();
+
+    formSaudeGeral.submit();
+});

@@ -73,8 +73,14 @@ body{
     margin: 0px 30px;
 }
 
-input, select, textarea{
+input, select{
     height: 25px;
+    border-radius: 2px;
+    border-width: 0.5px;
+}
+
+textarea{
+    height: 50px;
     border-radius: 2px;
     border-width: 0.5px;
 }
@@ -95,7 +101,6 @@ dialog::backdrop{
 .linha-bot{
     display: flex;
     justify-content: space-between;
-    gap: 30px;
     align-items: center;
     margin: 40px 40% 0 40%;
     gap: 30px;
@@ -129,4 +134,18 @@ button{
     .item{
         flex-direction: row;
     }
+}
+
+#linhaDeTexts{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .item{
+        gap: 10px;
+    }
+}
+
+#linhaRadio .item div {
+  display: flex;
+  align-items: center;
+  gap: 5px; 
 }
