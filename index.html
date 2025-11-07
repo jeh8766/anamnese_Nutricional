@@ -16,7 +16,7 @@
             </div>
         </div>
         
-        <form class="formularioDadosPessoais">
+        <form class="formularioDadosPessoais" id="formDadosPessoais">
             <div class="linha">                
                 <div class="item">
                     <label for="nome">Nome</label>
@@ -38,7 +38,7 @@
                  </div>   
                 <div class="item">
                    <label for="endereco">Endereço: </label>
-                    <input type="" id="endereco"/> 
+                    <input type="text" id="endereco"/> 
                 </div>
             </div>
             <div class="linha">
@@ -62,11 +62,17 @@
                     <input type="tel" id="telefone"/>   
                 </div>       
             </div>
-        <div class="linha-bot">
+        <div class="linha-bot" id="linha-bot1">
             <div class="item">
-                <button id="buttonCancelar">CANCELAR</button>
-                <button id="buttonContinuar" type="button">CONTINUAR</button>
+                <div>
+                    <button id="buttonCancelar" type="button">CANCELAR</button>
+                </div>
+            <div class="item">
+                <div>
+                    <button id="buttonContinuar" type="button">CONTINUAR</button>
+                </div>
             </div>
+             </div>
         </div>
         </form>        
     </dialog>
@@ -76,8 +82,7 @@
                 <h1>SAÚDE GERAL</h1>
             </div>
         </div>
-        <form>
-        
+        <form id="formSaudeGeral">
         <div class="linha">
             <div class="item">
                 <label for="job">Fuma?</label>

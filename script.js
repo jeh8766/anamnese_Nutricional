@@ -2,23 +2,19 @@ const modal1 = document.querySelector("#modal1");
 const modal2 = document.querySelector("#modal2")
 const buttonPreencherFicha = document.querySelector("#button_preencher_ficha");
 const buttonCancelar=document.querySelector("#buttonCancelar");
-const form= document.querySelector("form");
+const formDadosPessoais= document.querySelector("#formDadosPessoais");
+const formSaudeGeral= document.querySelector("#formSaudeGeral");
 const buttonContinuar= document.querySelector("#buttonContinuar");
 const buttonVoltar = document.querySelector("#buttonVoltar");
 const buttonCancelar2= document.querySelector("#buttonCancelar2");
-
-// fazendo mudanças aqui jéssica (adicionando)
-const nomeImput = document.querySelector("#nome");
+const dataInput = document.querySelector("#data");
+const nomeInput = document.querySelector("#nome");
 const alturaInput = document.querySelector("#altura");
 const emailInput = document.querySelector("#email");
 const enderecoInput = document.querySelector("#endereco");
 const telefoneInput = document.querySelector("#telefone");
 const pesoInput = document.querySelector("#peso");
-
-
-
-
-
+const apenasLetras = /^[A-Za-zÀ-ÿ\s]+$/;
 
 buttonPreencherFicha.onclick = function (){
     modal1.showModal();
@@ -28,17 +24,22 @@ buttonCancelar.onclick = function (){
     modal1.close();
 }
 
-
-
-
-
-
-
 buttonContinuar.onclick = function (){
     
     if (nomeInput.value.trim() === ""){
         alert("por favor, preencha seu nome");
-        nomeImput.focus();
+        nomeInput.focus();
+        return;
+    }
+
+    if (!apenasLetras.test(nomeInput.value)) {
+        alert("Digite um nome válido, números não são permitidos");
+        return;
+    }
+
+    if (alturaInput.value.trim() === "" || alturaInput.value <= 0){
+        alert("por favor, insira uma altura válida (em cm).");
+        alturaInput.focus();
         return;
     }
     
@@ -49,16 +50,8 @@ buttonContinuar.onclick = function (){
         return;
     }
 
-    const telefoneValidado = telefoneInput.value.replace(/\D/g, "");
-    if (telefoneValidado.lenght < 10) {
-        alert("por favor, insira um número válido (com ddd).");
-        telefoneInput.focus();
-        return;
-    }
-
-    if (pesoInput.value.trim() === "" || pesoInput.value <= 0){
-        alert("por favor, insira um peso válido (em kg).");
-        pesoInput.focus();
+    if(new Date(dataInput.value)>new Date()){
+        alert("Data de Nascimento inválida.")
         return;
     }
 
@@ -67,14 +60,18 @@ buttonContinuar.onclick = function (){
         enderecoInput.focus();
         return;
     }
+    if (pesoInput.value.trim() === "" || pesoInput.value <= 0){
+            alert("por favor, insira um peso válido (em kg).");
+            pesoInput.focus();
+            return;
+        }
 
-    if (alturaInput.value.trim() === "" || alturaInput.value <= 0){
-        alert("por favor, insira uma altura válida (em cm).");
-        alturaInput.focus;
+    const telefoneValidado = telefoneInput.value.replace(/\D/g, "");
+    if (telefoneValidado.length < 11) {
+        alert("por favor, insira um número válido (com ddd).");
+        telefoneInput.focus();
         return;
     }
-    
-    modal1.close();
 
     modal2.showModal();
 }
@@ -88,23 +85,23 @@ buttonCancelar2.onclick = function (){
     modal2.close();
 }
 
-form.addEventListener("submit", (Event) => {
-    Event.preventDefault();
+// form.addEventListener("submit", (Event) => {
+//     Event.preventDefault();
 
-    // if(nameInput.value===""){
-    //     alert("Por favor, preencha o seu nome");
-    //     return;
-    // }
+//     // if(nameInput.value===""){
+//     //     alert("Por favor, preencha o seu nome");
+//     //     return;
+//     // }
 
-    // if(emailInput.value==="" ){
-    //     alert("Por favor, preencha o seu email");
-    //     return;
-    // }
+//     // if(emailInput.value==="" ){
+//     //     alert("Por favor, preencha o seu email");
+//     //     return;
+//     // }
 
-    // if(!validatePassword(passwordInput.value, 8)){
-    //     alert("A senha precisa ter no mínimo 8 dígitos.")
-    //     return
-    // }
-    form.submit();
-})
+//     // if(!validatePassword(passwordInput.value, 8)){
+//     //     alert("A senha precisa ter no mínimo 8 dígitos.")
+//     //     return
+//     // }
+//     form.submit();
+// })
 
